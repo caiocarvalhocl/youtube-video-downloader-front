@@ -20,7 +20,10 @@ function App() {
         `${import.meta.env.VITE_API_URL}/api/download`,
         {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+            "User-Agent": navigator.userAgent,
+          },
           body: JSON.stringify({ url, quality }),
         },
       );
